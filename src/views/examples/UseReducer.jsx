@@ -3,6 +3,7 @@ import { StaticRouter } from 'react-router-dom'
 import PageTitle from '../../components/layout/PageTitle'
 
 import { initialState, reducer } from '../../store'
+import { numberAdd2, login } from '../../store/actions'
 
 const UseReducer = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState)
@@ -22,9 +23,9 @@ const UseReducer = (props) => {
                 <span className="text">{state.number}</span>
                 <div>
                     <button className="btn"
-                    onClick={() =>dispatch({type: 'login', payload  : 'Maria'})}>Login</button>
+                    onClick={() => login(dispatch, 'joão')}>Login</button>
                     <button className="btn"
-                    onClick={() => dispatch({type: 'numberAdd2'})}>+2</button>
+                    onClick={() => numberAdd2(dispatch)}>+2</button>
                     <button className="btn"
                     onClick={() => dispatch({type: 'numberMulti7'})}>*7</button>
                     <button className="btn"
